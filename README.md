@@ -17,6 +17,7 @@ Here are some hints on how to accomplish this task:
 <summary>Hint 1:</summary>
 <br>
 First we have to select the parent element. Why? Well the parent element is the container that's going to carry all of the information that are going to render. If you don't select something from the DOM then you'll essentially be sending the information we received to the void.
+
 ```javascript
 /*
  * How do we select a SINGLE element from the DOM?
