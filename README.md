@@ -262,7 +262,28 @@ Every event could be categorized under certain event objects. What an event obje
 ## How do we use them?
 
 #### Event listeners
-In order to use events inside of our Javascript files we first have to ATTACH [*_event listeners_*](https://www.w3schools.com/js/js_htmldom_eventlistener.asp) to each individual element. The reason why is because instead of listening for EVERYTHING by default and _then_ deciding what events to ignore. It would be easier to explicitly tell our code "When THIS happens do THIS". Let us start practicing by making a button console log a greeting when we click it.
+In order to use events inside of our Javascript files we first have to ATTACH [*_event listeners_*](https://www.w3schools.com/js/js_htmldom_eventlistener.asp) to each individual element. The reason why is because instead of listening for EVERYTHING by default and _then_ deciding what events to ignore. It would be easier to explicitly tell our code "When THIS happens do THIS".
+
+### Attaching
+Now that we have a description in our code that could describe what we're looking out for. We have to tell our HTML file exactly when it should run some code. This is called *_attaching event listeners_*. In order to attach an event listener you have to choose an HTML element first, then attach this event listener, while passing in a callback function which is what we want to run when the event is executed upon the chosen element.
+
+Example:
+```html
+<button id="example"></button>
+```
+
+```javascript
+const el = document.elementById('example');
+function whatToRun() {
+    console.log("this function runs when you click the button with id: \"element\"");
+}
+/*
+ * addEventListener is a higher order fucnction since it takes another function as a parameter
+ * the first argument is a string of the specfic event we're listening for
+ * the second argument is the callback aka the function to run once the even specfication is met
+*/
+el.addEventListener('click', whatToRun)
+```
 
 For this task we'll
 * select the button in our Javascript file to use it later
